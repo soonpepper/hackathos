@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Black History 3D Model</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
+
     <header>
         <h1>Contact Black History 3D Model</h1>
         <nav>
@@ -17,14 +18,25 @@
         </nav>
     </header>
 
-    <section id="contact-content">
-        <h2>Get in Touch</h2>
-        <p>If you have any questions, suggestions, or would like to collaborate, feel free to reach out to us.</p>
-        <!-- Add a contact form or contact information as needed -->
-    </section>
-
-    <footer>
-        &copy; 2024 Black History 3D Model
-    </footer>
-</body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="/submit_contact_form" method="post">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name..">
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email..">
+    
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject..">
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+    </body>
 </html>
+
