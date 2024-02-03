@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Black History Museum</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Black History 3D Model</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add or modify styles as needed */
+        .img-magnifier-glass {
+            position: absolute;
+            border: 3px solid #000;
+            border-radius: 50%;
+            cursor: none;
+            width: 100px; /* Adjust the size of the magnifier glass */
+            height: 100px; /* Adjust the size of the magnifier glass */
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Interactive Black History Museum</h1>
         <nav>
@@ -26,7 +39,7 @@
     <section id="gallery" class="zoom-section">
         <h2>African American Artifacts Gallery</h2>
         <div class="image-container">
-            <img src="ifehead.jpg" alt="African American Artifact 1">
+            <img id="ifehead" src="ifehead.jpg" alt="African American Artifact 1" onmousemove="magnify('ifehead', 3)">
             <img src="artifact2.jpg" alt="African American Artifact 2">
             <img src="artifact3.jpg" alt="African American Artifact 3">
             <!-- Add more images as needed -->
@@ -39,6 +52,5 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="joe.js"></script>
-    <script src="zoom.js"></script>
+    <script src="mag.js"></script>
 </body>
-</html>
