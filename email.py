@@ -14,12 +14,12 @@ def send_email():
     email_content = f"From: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}"
 
     # Set your email server details
-    smtp_server = 'smtp.yourserver.com'
+    smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    smtp_username = 'yourusername'
-    smtp_password = 'yourpassword'
-    from_email = 'your@email.com'
-    to_email = 'recipient@email.com'
+    smtp_username = 'thetej1234@gmail.com'
+    smtp_password = 'aW2!9876'
+    from_email = email
+    to_email = 'thetej1234@gmail.com'
 
     # Send the email
     try:
