@@ -32,18 +32,43 @@ function submitForm(name, email, subject, message) {
 }
 
 const express = require('express');
+const nodemailer = require('nodemailer');
 const app = express();
 
-app.use(express.json()); // To parse JSON bodies
+app.use(express.json());
 
 app.post('/send_email', (req, res) => {
     const { name, email, subject, message } = req.body;
-    
-    // Here, you'd add your logic to send an email
-    console.log(name, email, subject, message);
 
-    // Sending a response back to the client
-    res.send('Email sent successfully (or a mock message for testing).');
+    // Create a transporter for nodemailer
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com', // Replace with your SMTP host
+        port: 587, // Common port for SMTP
+        secure: false, // True for 465, false for other ports
+        auth: {
+            user: 'thetej1234@gmail.com', // Replace with your email
+            pass: 'aW2!9876' // Replace with your email password
+        }
+    });
+
+    // Setting up email data
+    const mailOptions = {
+        from: email, // Sender address
+        to: 'thetej1234@gmail.com', // List of recipients
+        subject: `New Contact Form Submission from ${name}: ${subject}`, // Subject line
+        text: `You have received a new message from your contact form:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}` // Plain text body
+    };
+
+    // Sending the email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.status(500).send('Error sending email');
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.send('Email sent successfully');
+        }
+    });
 });
 
-app.listen(3000, () => console.log('Server is running on port 3000'));
+app.listen(3000, () => console.log('Server running on port 3000'));
