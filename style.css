@@ -87,7 +87,7 @@ footer {
     position: absolute;
     border: 3px solid #000;
     border-radius: 50%;
-    cursor: auto;
+    cursor: none;
     width: 100px; /* Adjust the size of the magnifier glass */
     height: 100px; /* Adjust the size of the magnifier glass */
     overflow: hidden;
