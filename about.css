@@ -9,6 +9,14 @@ body {
     flex-direction: column;
 
 }
+body {
+    background-image: url('./layer_about.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size:cover;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
 
 .grid-item {
     display: flex;

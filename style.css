@@ -1,5 +1,9 @@
-body {
 
+body {
+    background-image: url('./layer1.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size:cover;
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
 }
