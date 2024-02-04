@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between grid items */
+}
+
+.grid-item img {
+    width: auto; /* Adjust the size as needed */
+    max-width: 50%; /* Maximum width of the image */
+    margin-right: 100px; /* Space between the image and the info */
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.info {
+    flex-grow: 1;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+}
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+#model-container canvas {
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
