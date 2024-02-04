@@ -33,40 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const ifeheadImage = document.querySelector('.image-container img[src="ifehead.jpg"]');
 
     if (ifeheadImage) {
-        let zoomFactor = 0.02; // Adjust this value for the desired zoom speed
-        let currentScale = 1;
+        let zoomFactor = 2; // This is the zoom level when the mouse is over the image
 
-        const resetZoom = () => {
-            ifeheadImage.style.transform = 'scale(1)';
-            ifeheadImage.style.transformOrigin = 'center';
-        };
-
-        ifeheadImage.addEventListener('mouseenter', () => {
-            window.addEventListener('mousemove', onMouseMove);
-            window.addEventListener('scroll', onScroll);
-        });
-
-        ifeheadImage.addEventListener('mouseleave', () => {
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('scroll', onScroll);
-            resetZoom();
-        });
-
-        const onMouseMove = (event) => {
+        ifeheadImage.addEventListener('mousemove', (event) => {
             const bounds = ifeheadImage.getBoundingClientRect();
             const x = event.clientX - bounds.left;
             const y = event.clientY - bounds.top;
-            const xPercent = x / bounds.width;
-            const yPercent = y / bounds.height;
 
-            ifeheadImage.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
-            ifeheadImage.style.transform = `scale(${currentScale})`;
-        };
+            // Convert the cursor's position to a percentage of the image's dimensions
+            const xPercent = (x / bounds.width) * 100;
+            const yPercent = (y / bounds.height) * 100;
 
-        const onScroll = () => {
-            const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-            currentScale = 1 + scrollPercentage * zoomFactor;
-            ifeheadImage.style.transform = `scale(${currentScale})`;
-        };
+            ifeheadImage.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            ifeheadImage.style.transform = `scale(${zoomFactor})`;
+        });
+
+        ifeheadImage.addEventListener('mouseleave', () => {
+            ifeheadImage.style.transform = 'scale(1)';
+            ifeheadImage.style.transformOrigin = 'center';
+        });
     }
 });
