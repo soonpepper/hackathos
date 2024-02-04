@@ -53,7 +53,7 @@ function magnify(imgID, zoom) {
       y = e.pageY - a.top;
       x = x - window.scrollX;
       y = y - window.scrollY;
-      return {x : x + 300, y : y + 300};
+      return {x : x + 500, y : y + 500};
   }
 
   function removeMagnifier() {
