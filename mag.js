@@ -19,9 +19,6 @@ function magnify(imgID, zoom) {
   glass.addEventListener("mousemove", moveMagnifier);
   img.addEventListener("mousemove", moveMagnifier);
 
-  // Event listeners for touch screens
-  glass.addEventListener("touchmove", moveMagnifier);
-  img.addEventListener("touchmove", moveMagnifier);
 
   // Event listeners to remove the magnifier
   glass.addEventListener("mouseleave", removeMagnifier);
@@ -56,8 +53,8 @@ function getCursorPos(e) {
   a = img.getBoundingClientRect();
 
   /* Calculate the cursor's x and y coordinates, relative to the image: */
-  x = e.pageX - a.left - 300;
-  y = e.pageY - a.top - 300;
+  x = e.pageX - a.left;
+  y = e.pageY - a.top;
 
   /* Consider any page scrolling: */
   x = x - window.scrollX;
