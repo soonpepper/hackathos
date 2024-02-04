@@ -51,8 +51,8 @@ function magnify(imgID, zoom) {
       a = img.getBoundingClientRect();
       x = e.pageX - a.left;
       y = e.pageY - a.top;
-      x = x - window.scrollX;
-      y = y - window.scrollY;
+      x = x - window.scrollX - 500;
+      y = y - window.scrollY - 500;
       return {x : x, y : y};
   }
 
