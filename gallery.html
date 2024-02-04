@@ -1,44 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Black History Museum</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href=".css">
-</head>
-<body>
-    <header>
-        <h1>Interactive Black History Museum</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="#">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Interactive Black History Museum</title>
+            <!--- <link rel="stylesheet" href="style.css"> --->
+            <link rel="stylesheet" href="gallstyle.css">
+        </head>
+        <body>
+            <header>
+                <h1>Interactive Black History Museum</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="#">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </header>
 
-    <section id="gallery">
-        <h2>African American Artifacts Gallery</h2>
-        <div class="image-container">
-            <img src="artifact1.jpg" alt="African American Artifact 1">
-            <img src="artifact2.jpg" alt="African American Artifact 2">
-            <img src="artifact3.jpg" alt="African American Artifact 3">
-            <!-- Add more images as needed -->
-        </div>
+            <div class="image-grid">
+                <div class="falling-object">
+                    <img class="special-image" src="benin.jpg" alt="Falling Image 1">
+                </div>
+                <p>The <strong>Benin Bronzes</strong> are a collection of intricately crafted bronze, brass, and ivory sculptures originating from the Kingdom of Benin in present-day Nigeria. Created by the Edo people, these artifacts depict historical events, royal figures, and deities, showcasing advanced artistic and metallurgical skills. Notable for their exquisite detailing, the Benin Bronzes carry both artistic and historical significance, serving as a visual record of the Benin Kingdom's rich cultural heritage. Acquired through a controversial history of looting in 1897, discussions persist about their repatriation and the ethical considerations surrounding cultural preservation.</p>
+                <div class="falling-object">
+                    <img src="manu.JPG" alt="Falling Image 2">
+                </div>
+                <p>The <strong>Timbuktu Manuscripts</strong>, housed in Mali, date back to the 13th century and are a testament to Timbuktu's historical role as a center of learning in West Africa. Covering diverse subjects like science, literature, and Islamic studies, these manuscripts showcase the intellectual achievements of the region, providing valuable insights into its rich cultural heritage.</p>
+                <div class="falling-object">
+                    <img src="Dogon12.jpg" alt="Falling Image 3">
+                </div>
+                <p><strong>Dogon masks</strong> are traditional artifacts created by the Dogon people of Mali for religious and cultural ceremonies. Carved from wood, these masks are adorned with symbolic elements, representing spirits, ancestors, or mythological beings. They play a crucial role in rituals associated with agriculture, initiations, and communal events, reflecting the Dogon's spiritual beliefs and cultural identity.</p>
+                <!-- Add more images as needed -->
+            </div>
 
-        <div id="chat-container">
-            <div id="chat-box"></div>
-            <form id="chat-form">
-              <input type="text" id="user-input" placeholder="Type your question...">
-              <button type="submit">Send</button>
-            </form>
-          </div>
-          <script src="gall.js"></script>
-    </section>
 
-    <footer>
-        &copy; 2024 Black History 3D Model
-    </footer>
-</body>
-</html>
+
+            <section id="gallery">
+                <h2>Ask ChatGPT about any questions about the artifacts</h2>
+
+                <div id="chat-container">
+                    <div id="chat-box"></div>
+                    <form id="chat-form">
+                    <input type="text" id="user-input" placeholder="Type your question...">
+                    <button type="submit">Send</button>
+                    </form>
+                </div>
+                <script src="gall.js"></script>
+            </section>
+
+            <footer>
+                &copy; 2024 Black History 3D Model
+            </footer>
+        </body>
+        </html>
