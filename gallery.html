@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Black History Museum</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=".css">
 </head>
 <body>
     <header>
@@ -20,7 +18,7 @@
         </nav>
     </header>
 
-    <section>
+    <section id="gallery">
         <h2>African American Artifacts Gallery</h2>
         <div class="image-container">
             <img src="artifact1.jpg" alt="African American Artifact 1">
@@ -28,6 +26,15 @@
             <img src="artifact3.jpg" alt="African American Artifact 3">
             <!-- Add more images as needed -->
         </div>
+
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <form id="chat-form">
+              <input type="text" id="user-input" placeholder="Type your question...">
+              <button type="submit">Send</button>
+            </form>
+          </div>
+          <script src="gall.js"></script>
     </section>
 
     <footer>
