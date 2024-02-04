@@ -1,9 +1,16 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
 }
 
 header {
