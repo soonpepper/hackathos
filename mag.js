@@ -19,7 +19,6 @@ function magnify(imgID, zoom) {
   glass.addEventListener("mousemove", moveMagnifier);
   img.addEventListener("mousemove", moveMagnifier);
 
-
   // Event listeners to remove the magnifier
   glass.addEventListener("mouseleave", removeMagnifier);
   img.addEventListener("mouseleave", removeMagnifier);
