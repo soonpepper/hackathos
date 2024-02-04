@@ -22,6 +22,7 @@ function magnify(imgID, zoom) {
   // Event listeners for touch screens
   glass.addEventListener("touchmove", moveMagnifier);
   img.addEventListener("touchmove", moveMagnifier);
+  setInitialPosition();
 
   // Event listeners to remove the magnifier
   glass.addEventListener("mouseleave", removeMagnifier);
@@ -59,4 +60,14 @@ function magnify(imgID, zoom) {
   function removeMagnifier() {
       glass.remove();
   }
+}
+
+function setInitialPosition() {
+  // Set the initial position, for example, at the center of the image
+  const centerX = img.width / 2 - w;
+  const centerY = img.height / 2 - h;
+
+  glass.style.left = centerX + 'px';
+  glass.style.top = centerY + 'px';
+  glass.style.backgroundPosition = "-" + (centerX * zoom) + "px -" + (centerY * zoom) + "px";
 }
