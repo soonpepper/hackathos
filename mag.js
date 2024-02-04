@@ -36,10 +36,10 @@ function magnify(imgID, zoom) {
       y = pos.y;
 
       // Adjust the position of the magnifier glass to be centered on the cursor
-      // if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-      // if (x < w / zoom) {x = w / zoom;}
-      // if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-      // if (y < h / zoom) {y = h / zoom;}
+      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+      if (x < w / zoom) {x = w / zoom;}
+      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+      if (y < h / zoom) {y = h / zoom;}
 
       glass.style.left = (x - w) + "px";
       glass.style.top = (y - h) + "px";
