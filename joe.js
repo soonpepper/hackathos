@@ -14,3 +14,12 @@ window.addEventListener('scroll', () => {
 
     prevScrollPos = currentScrollPos;
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const fadeElement = document.getElementById('fade-in-element');
+
+    // Add the 'fade-in' class after a delay (e.g., 1 second)
+    setTimeout(function () {
+        fadeElement.classList.add('fade-in');
+    }, 1000);
+});

@@ -92,3 +92,12 @@ footer {
     height: 100px; /* Adjust the size of the magnifier glass */
     overflow: hidden;
 }
+
+#fade-in-element {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+  }
