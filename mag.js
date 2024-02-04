@@ -22,7 +22,7 @@ function magnify(imgID, zoom) {
   // Event listeners for touch screens
   glass.addEventListener("touchmove", moveMagnifier);
   img.addEventListener("touchmove", moveMagnifier);
-  setInitialPosition();
+  // setInitialPosition();
 
   // Event listeners to remove the magnifier
   glass.addEventListener("mouseleave", removeMagnifier);
