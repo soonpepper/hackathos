@@ -60,15 +60,6 @@ function magnify(imgID, zoom) {
   function removeMagnifier() {
       glass.remove();
   }
-  function setInitialPosition() {
-    // Set the initial position, for example, at the center of the image
-    const centerX = img.width / 2;
-    const centerY = img.height / 2;
-
-    glass.style.left = centerX + 'px';
-    glass.style.top = centerY + 'px';
-    glass.style.backgroundPosition = "-" + (centerX * zoom) + "px -" + (centerY * zoom) + "px";
-}
 }
 
 
