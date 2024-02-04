@@ -35,8 +35,8 @@ function magnify(imgID, zoom) {
     y = pos.y;
 
     // New logic to center the magnifier on the cursor
-    x = x - (w / zoom);
-    y = y - (h / zoom);
+    // x = x - (w / zoom);
+    // y = y - (h / zoom);
 
     // Prevent the magnifier glass from being positioned outside the image
     if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
@@ -56,8 +56,8 @@ function getCursorPos(e) {
   a = img.getBoundingClientRect();
 
   /* Calculate the cursor's x and y coordinates, relative to the image: */
-  x = e.pageX;
-  y = e.pageY;
+  x = e.pageX - a.left;
+  y = e.pageY - a.top;
 
   /* Consider any page scrolling: */
   x = x - window.scrollX;
