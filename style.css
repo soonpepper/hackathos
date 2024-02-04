@@ -1,6 +1,7 @@
 
 body {
-    background-image: url('./layer1.svg');
+    
+    background-image: url('./layer2.png');
     background-repeat: repeat;
     background-position: center;
     background-size:cover;
