@@ -35,10 +35,10 @@ function magnify(imgID, zoom) {
       y = pos.y;
 
       // Adjust the position of the magnifier glass to be centered on the cursor
-      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-      if (x < w / zoom) {x = w / zoom;}
-      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-      if (y < h / zoom) {y = h / zoom;}
+      // if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+      // if (x < w / zoom) {x = w / zoom;}
+      // if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+      // if (y < h / zoom) {y = h / zoom;}
 
       glass.style.left = (x - w) + "px";
       glass.style.top = (y - h) + "px";
@@ -51,8 +51,8 @@ function magnify(imgID, zoom) {
       a = img.getBoundingClientRect();
       x = e.pageX - a.left;
       y = e.pageY - a.top;
-      x = x - window.scrollX + 500;
-      y = y - window.scrollY + 500;
+      x = x - window.scrollX;
+      y = y - window.scrollY;
       return {x : x, y : y};
   }
 
