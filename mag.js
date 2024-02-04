@@ -60,8 +60,8 @@ function getCursorPos(e) {
   y = e.pageY - a.top;
 
   /* Consider any page scrolling: */
-  x = x - window.pageXOffset;
-  y = y - window.pageYOffset;
+  x = x - window.scrollX;
+  y = y - window.scrollY;
   return {x : x, y : y};
 }
 
