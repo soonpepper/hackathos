@@ -7,6 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (ifeheadImage) {
         const zoomFactor = 0.02; // Adjust this value for the desired zoom speed
         const zoomOrigin = { x: 0.5, y: 0.5 }; // Center of the image
+        
+        ifeheadImage.addEventListener('mousemove', (event) => {
+            const bounds = event.target.getBoundingClientRect();
+            const x = event.clientX - bounds.left;
+            const y = event.clientY - bounds.top;
+            const xPercent = x / bounds.width;
+            const yPercent = y / bounds.height;
+
+            ifeheadImage.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
+            ifeheadImage.style.transform = `scale(${currentScale})`;
+        });
 
         window.addEventListener('scroll', () => {
             const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
