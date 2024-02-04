@@ -68,6 +68,7 @@ footer {
     width: 100px; /* Adjust the size of the magnifier glass */
     height: 100px; /* Adjust the size of the magnifier glass */
     overflow: hidden;
+    
 }
 
 #fade-in-element {

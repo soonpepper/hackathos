@@ -1,6 +1,13 @@
 function magnify(imgID, zoom) {
   var img, glass, w, h, bw;
   img = document.getElementById(imgID);
+  // Get the container of the image
+  var container = img.parentElement;
+  // Parse padding values from the container
+  var style = window.getComputedStyle(container);
+  var padLeft = parseInt(style.paddingLeft, 10);
+  var padTop = parseInt(style.paddingTop, 10);
+
   glass = document.createElement("DIV");
   glass.setAttribute("class", "img-magnifier-glass");
   img.parentElement.insertBefore(glass, img);
@@ -16,18 +23,16 @@ function magnify(imgID, zoom) {
   glass.addEventListener("touchmove", moveMagnifier);
   img.addEventListener("touchmove", moveMagnifier);
 
-  // Hide the magnifier glass when the mouse leaves the image
   img.addEventListener("mouseleave", function() {
-      glass.style.display = "none";
+    glass.style.display = "none";
   });
 
   glass.addEventListener("mouseleave", function() {
-      glass.style.display = "none";
+    glass.style.display = "none";
   });
 
-  // Show the magnifier glass when the mouse enters the image
   img.addEventListener("mouseenter", function() {
-      glass.style.display = "block";
+    glass.style.display = "block";
   });
 
   function moveMagnifier(e) {
@@ -49,10 +54,9 @@ function magnify(imgID, zoom) {
     var a, x = 0, y = 0;
     e = e || window.event;
     a = img.getBoundingClientRect();
-    x = e.pageX - a.left;
-    y = e.pageY - a.top;
-    x = x - window.pageXOffset;
-    y = y - window.pageYOffset;
+    x = e.pageX - a.left - padLeft - window.pageXOffset;
+    y = e.pageY - a.top - padTop - window.pageYOffset;
     return {x : x, y : y};
   }
+
 }
