@@ -36,8 +36,24 @@ document.addEventListener('DOMContentLoaded', function () {
         let zoomFactor = 0.02; // Adjust this value for the desired zoom speed
         let currentScale = 1;
 
-        ifeheadImage.addEventListener('mousemove', (event) => {
-            const bounds = event.target.getBoundingClientRect();
+        const resetZoom = () => {
+            ifeheadImage.style.transform = 'scale(1)';
+            ifeheadImage.style.transformOrigin = 'center';
+        };
+
+        ifeheadImage.addEventListener('mouseenter', () => {
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('scroll', onScroll);
+        });
+
+        ifeheadImage.addEventListener('mouseleave', () => {
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('scroll', onScroll);
+            resetZoom();
+        });
+
+        const onMouseMove = (event) => {
+            const bounds = ifeheadImage.getBoundingClientRect();
             const x = event.clientX - bounds.left;
             const y = event.clientY - bounds.top;
             const xPercent = x / bounds.width;
@@ -45,14 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             ifeheadImage.style.transformOrigin = `${xPercent * 100}% ${yPercent * 100}%`;
             ifeheadImage.style.transform = `scale(${currentScale})`;
-        });
+        };
 
-        window.addEventListener('scroll', () => {
+        const onScroll = () => {
             const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
             currentScale = 1 + scrollPercentage * zoomFactor;
-
-            // Update the scale based on scroll, but keep the transform origin based on the last mouse position
             ifeheadImage.style.transform = `scale(${currentScale})`;
-        });
+        };
     }
 });
