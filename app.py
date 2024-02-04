@@ -24,9 +24,10 @@ def submit_form():
     conn.close()
 
     return "Form submitted"
+
 def init_db():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS contacts (name TEXT, email TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS contacts (name TEXT, email TEXT, subject TEXT, message TEXT)''')
     conn.commit()
     conn.close()
