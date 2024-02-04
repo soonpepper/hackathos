@@ -49,16 +49,21 @@ function magnify(imgID, zoom) {
     glass.style.backgroundPosition = "-" + ((x * zoom) - w / 2) + "px -" + ((y * zoom) - h / 2) + "px";
 }
 
-  function getCursorPos(e) {
-      var a, x = 0, y = 0;
-      e = e || window.event;
-      a = img.getBoundingClientRect();
-      x = e.pageX - a.left;
-      y = e.pageY - a.top;
-      x = x - window.pageXOffset;
-      y = y - window.pageYOffset;
-      return {x : x, y : y};
-  }
+function getCursorPos(e) {
+  var a, x = 0, y = 0;
+  e = e || window.event;
+  /* Get the x and y positions of the image: */
+  a = img.getBoundingClientRect();
+
+  /* Calculate the cursor's x and y coordinates, relative to the image: */
+  x = e.pageX - a.left;
+  y = e.pageY - a.top;
+
+  /* Consider any page scrolling: */
+  x = x - window.pageXOffset;
+  y = y - window.pageYOffset;
+  return {x : x, y : y};
+}
 
   function removeMagnifier() {
       glass.remove();
