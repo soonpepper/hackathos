@@ -18,7 +18,7 @@ section {
 }
 
 header {
-    background-color: #333;
+    background-color: #793636;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -30,7 +30,7 @@ header {
 }
 
 nav {
-    background-color: #444;
+    background-color: #442020;
     padding: 10px;
     text-align: center;
 }
@@ -56,32 +56,42 @@ footer {
     width: 100%;
 }
 
-.zoomable-image {
+/* .zoomable-image {
     transition: transform 0.3s ease-in-out;
 }
 
 .zoomable-image:hover {
     transform: scale(1.2);
+} */
+
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position: relative;
 }
 
 .img-magnifier-glass {
-    position: absolute;
-    border: 3px solid #000;
-    border-radius: 50%;
-    cursor: none;
-    width: 100px; /* Adjust the size of the magnifier glass */
-    height: 100px; /* Adjust the size of the magnifier glass */
-    overflow: hidden;
-    
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
 }
 
-#fade-in-element {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
+.fade-in-element {
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
-  .fade-in {
-    opacity: 1;
-  }
-
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 

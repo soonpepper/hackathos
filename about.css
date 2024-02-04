@@ -1,3 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+.bounce-in-left {
+    animation: bounce-in-left 2s ease 1;
+  }
+  @keyframes bounce-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(30px);
+    }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+    
+  }
+
+  .bounce-in-right {
+    animation: bounce-in-right 2s ease 1;
+  }
+  @keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+
 body {
 
     font-family: 'Arial', sans-serif;
@@ -35,14 +70,14 @@ body {
     flex-grow: 1;
 }
 header {
-    background-color: #333;
+    background-color: #793636;
     color: #fff;
     padding: 10px;
     text-align: center;
     transition: transform 0.5s;
 }
 nav {
-    background-color: #444;
+    background-color: #442020;
     padding: 10px;
     text-align: center;
 }
