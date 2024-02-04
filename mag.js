@@ -56,8 +56,8 @@ function getCursorPos(e) {
   a = img.getBoundingClientRect();
 
   /* Calculate the cursor's x and y coordinates, relative to the image: */
-  x = e.pageX + 600;
-  y = e.pageY + 600;
+  x = e.pageX + 200;
+  y = e.pageY + 200;
 
   /* Consider any page scrolling: */
   x = x - window.pageXOffset;
