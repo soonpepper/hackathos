@@ -31,8 +31,8 @@ function magnify(imgID, zoom) {
       var pos, x, y;
       e.preventDefault();
       pos = getCursorPos(e);
-      x = pos.x - 500;
-      y = pos.y - 500;
+      x = pos.x;
+      y = pos.y;
 
       // Adjust the position of the magnifier glass to be centered on the cursor
       if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
@@ -51,8 +51,8 @@ function magnify(imgID, zoom) {
       a = img.getBoundingClientRect();
       x = e.pageX - a.left;
       y = e.pageY - a.top;
-      x = x - window.pageXOffset;
-      y = y - window.pageYOffset;
+      x = x - window.scrollX;
+      y = y - window.scrollY;
       return {x : x, y : y};
   }
 
