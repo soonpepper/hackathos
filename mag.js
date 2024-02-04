@@ -28,22 +28,26 @@ function magnify(imgID, zoom) {
   img.addEventListener("mouseleave", removeMagnifier);
 
   function moveMagnifier(e) {
-      var pos, x, y;
-      e.preventDefault();
-      pos = getCursorPos(e);
-      x = pos.x;
-      y = pos.y;
+    var pos, x, y;
+    e.preventDefault();
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
 
-      // Adjust the position of the magnifier glass to be centered on the cursor
-      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-      if (x < w / zoom) {x = w / zoom;}
-      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-      if (y < h / zoom) {y = h / zoom;}
+    // New logic to center the magnifier on the cursor
+    x = x - (w / zoom);
+    y = y - (h / zoom);
 
-      glass.style.left = (x - w) + "px";
-      glass.style.top = (y - h) + "px";
-      glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
-  }
+    // Prevent the magnifier glass from being positioned outside the image
+    if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+    if (x < 0) { x = 0; }
+    if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+    if (y < 0) { y = 0; }
+
+    glass.style.left = x + "px";
+    glass.style.top = y + "px";
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w / 2) + "px -" + ((y * zoom) - h / 2) + "px";
+}
 
   function getCursorPos(e) {
       var a, x = 0, y = 0;
