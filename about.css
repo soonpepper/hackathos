@@ -1,3 +1,9 @@
+body {
+
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -59,4 +65,14 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+.hidden {
+    transform: translateY(-100%);
+}
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: 100px 20vw;
 }
