@@ -33,18 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const ifeheadImage = document.querySelector('.image-container img[src="ifehead.jpg"]');
 
     if (ifeheadImage) {
-        let zoomFactor = 2; // This is the zoom level when the mouse is over the image
+        const zoomFactor = 2; // Adjust this value for the desired zoom level
 
         ifeheadImage.addEventListener('mousemove', (event) => {
             const bounds = ifeheadImage.getBoundingClientRect();
-            const x = event.clientX - bounds.left;
-            const y = event.clientY - bounds.top;
+            // Calculate the cursor's position relative to the image
+            let x = (event.clientX - bounds.left) / bounds.width;
+            let y = (event.clientY - bounds.top) / bounds.height;
 
-            // Convert the cursor's position to a percentage of the image's dimensions
-            const xPercent = (x / bounds.width) * 100;
-            const yPercent = (y / bounds.height) * 100;
+            // Adjust the position to account for the zoom
+            x = x * 100 - (50 / zoomFactor);
+            y = y * 100 - (50 / zoomFactor);
 
-            ifeheadImage.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+            ifeheadImage.style.transformOrigin = `${x}% ${y}%`;
             ifeheadImage.style.transform = `scale(${zoomFactor})`;
         });
 
